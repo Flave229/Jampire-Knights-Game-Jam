@@ -1,0 +1,680 @@
+fileFormatVersion: 2
+guid: 9bb35ac213bdaf34a9049efa036a2dab
+timeCreated: 1441537759
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Arm_Pivot
+    100002: Arm_Pole_L
+    100004: Arm_Pole_R
+    100006: Cannon
+    100008: Chest
+    100010: Eye_Brow_L
+    100012: Eye_Brow_R
+    100014: Eye_L
+    100016: Eye_R
+    100018: Eye_Target_L
+    100020: Eye_Target_R
+    100022: Fingers_1
+    100024: Fingers_2
+    100026: Fingers_3
+    100028: Head
+    100030: Head_Parent
+    100032: Head_Target
+    100034: Index_1
+    100036: Index_2
+    100038: Index_3
+    100040: Jaw
+    100042: Left_Arm_Target
+    100044: LowerArm_L
+    100046: LowerArm_R
+    100048: Neck
+    100050: Player
+    100052: Player_Rig
+    100054: //RootNode
+    100056: Right_Arm_Target
+    100058: Root
+    100060: Shield_Opener
+    100062: Shield_Rotator
+    100064: Shoulder_L
+    100066: Shoulder_R
+    100068: Spine_1
+    100070: Spine_2
+    100072: Spine_3
+    100074: Spine_IK_Ball_Parent
+    100076: Spine_IK_Pole
+    100078: Tank_L
+    100080: Tank_R
+    100082: Themb_3
+    100084: Thumb_1
+    100086: Thumb_2
+    100088: Tie_2
+    100090: Tie_3
+    100092: Tie_4
+    100094: Tie__
+    100096: UpperArm_L
+    100098: UpperArm_R
+    400000: Arm_Pivot
+    400002: Arm_Pole_L
+    400004: Arm_Pole_R
+    400006: Cannon
+    400008: Chest
+    400010: Eye_Brow_L
+    400012: Eye_Brow_R
+    400014: Eye_L
+    400016: Eye_R
+    400018: Eye_Target_L
+    400020: Eye_Target_R
+    400022: Fingers_1
+    400024: Fingers_2
+    400026: Fingers_3
+    400028: Head
+    400030: Head_Parent
+    400032: Head_Target
+    400034: Index_1
+    400036: Index_2
+    400038: Index_3
+    400040: Jaw
+    400042: Left_Arm_Target
+    400044: LowerArm_L
+    400046: LowerArm_R
+    400048: Neck
+    400050: Player
+    400052: Player_Rig
+    400054: //RootNode
+    400056: Right_Arm_Target
+    400058: Root
+    400060: Shield_Opener
+    400062: Shield_Rotator
+    400064: Shoulder_L
+    400066: Shoulder_R
+    400068: Spine_1
+    400070: Spine_2
+    400072: Spine_3
+    400074: Spine_IK_Ball_Parent
+    400076: Spine_IK_Pole
+    400078: Tank_L
+    400080: Tank_R
+    400082: Themb_3
+    400084: Thumb_1
+    400086: Thumb_2
+    400088: Tie_2
+    400090: Tie_3
+    400092: Tie_4
+    400094: Tie__
+    400096: UpperArm_L
+    400098: UpperArm_R
+    4300000: Player
+    7400000: Default Take
+    7400002: Die
+    7400004: Idle
+    7400006: Move
+    9500000: //RootNode
+    13700000: Player
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Player
+        weight: 1
+      - path: Player_Rig
+        weight: 1
+      - path: Player_Rig/Root
+        weight: 1
+      - path: Player_Rig/Root/Arm_Pole_L
+        weight: 1
+      - path: Player_Rig/Root/Arm_Pole_R
+        weight: 1
+      - path: Player_Rig/Root/Chest
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent/Head
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent/Head/Eye_Brow_L
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent/Head/Eye_Brow_R
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent/Head/Eye_L
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent/Head/Eye_R
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent/Head/Jaw
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_L
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_L/UpperArm_L
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_L/UpperArm_L/LowerArm_L
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Shield_Rotator
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Shield_Rotator/Shield_Opener
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_R
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_R/UpperArm_R
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_R/UpperArm_R/LowerArm_R
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Arm_Pivot
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Cannon
+        weight: 1
+      - path: Player_Rig/Root/Chest/Spine_1
+        weight: 1
+      - path: Player_Rig/Root/Chest/Spine_1/Spine_2
+        weight: 1
+      - path: Player_Rig/Root/Chest/Spine_1/Spine_2/Spine_3
+        weight: 1
+      - path: Player_Rig/Root/Chest/Tank_L
+        weight: 1
+      - path: Player_Rig/Root/Chest/Tank_R
+        weight: 1
+      - path: Player_Rig/Root/Chest/Tie__
+        weight: 1
+      - path: Player_Rig/Root/Chest/Tie__/Tie_2
+        weight: 1
+      - path: Player_Rig/Root/Chest/Tie__/Tie_2/Tie_3
+        weight: 1
+      - path: Player_Rig/Root/Chest/Tie__/Tie_2/Tie_3/Tie_4
+        weight: 1
+      - path: Player_Rig/Root/Head_Target
+        weight: 1
+      - path: Player_Rig/Root/Head_Target/Eye_Target_L
+        weight: 1
+      - path: Player_Rig/Root/Head_Target/Eye_Target_R
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Fingers_1
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Fingers_1/Fingers_2
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Fingers_1/Fingers_2/Fingers_3
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Index_1
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Index_1/Index_2
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Index_1/Index_2/Index_3
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Thumb_1
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Thumb_1/Thumb_2
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Thumb_1/Thumb_2/Themb_3
+        weight: 1
+      - path: Player_Rig/Root/Right_Arm_Target
+        weight: 1
+      - path: Player_Rig/Root/Spine_IK_Ball_Parent
+        weight: 1
+      - path: Player_Rig/Root/Spine_IK_Pole
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Die
+      takeName: Die
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Player
+        weight: 1
+      - path: Player_Rig
+        weight: 1
+      - path: Player_Rig/Root
+        weight: 1
+      - path: Player_Rig/Root/Arm_Pole_L
+        weight: 1
+      - path: Player_Rig/Root/Arm_Pole_R
+        weight: 1
+      - path: Player_Rig/Root/Chest
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent/Head
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent/Head/Eye_Brow_L
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent/Head/Eye_Brow_R
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent/Head/Eye_L
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent/Head/Eye_R
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent/Head/Jaw
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_L
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_L/UpperArm_L
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_L/UpperArm_L/LowerArm_L
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Shield_Rotator
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Shield_Rotator/Shield_Opener
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_R
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_R/UpperArm_R
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_R/UpperArm_R/LowerArm_R
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Arm_Pivot
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Cannon
+        weight: 1
+      - path: Player_Rig/Root/Chest/Spine_1
+        weight: 1
+      - path: Player_Rig/Root/Chest/Spine_1/Spine_2
+        weight: 1
+      - path: Player_Rig/Root/Chest/Spine_1/Spine_2/Spine_3
+        weight: 1
+      - path: Player_Rig/Root/Chest/Tank_L
+        weight: 1
+      - path: Player_Rig/Root/Chest/Tank_R
+        weight: 1
+      - path: Player_Rig/Root/Chest/Tie__
+        weight: 1
+      - path: Player_Rig/Root/Chest/Tie__/Tie_2
+        weight: 1
+      - path: Player_Rig/Root/Chest/Tie__/Tie_2/Tie_3
+        weight: 1
+      - path: Player_Rig/Root/Chest/Tie__/Tie_2/Tie_3/Tie_4
+        weight: 1
+      - path: Player_Rig/Root/Head_Target
+        weight: 1
+      - path: Player_Rig/Root/Head_Target/Eye_Target_L
+        weight: 1
+      - path: Player_Rig/Root/Head_Target/Eye_Target_R
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Fingers_1
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Fingers_1/Fingers_2
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Fingers_1/Fingers_2/Fingers_3
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Index_1
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Index_1/Index_2
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Index_1/Index_2/Index_3
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Thumb_1
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Thumb_1/Thumb_2
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Thumb_1/Thumb_2/Themb_3
+        weight: 1
+      - path: Player_Rig/Root/Right_Arm_Target
+        weight: 1
+      - path: Player_Rig/Root/Spine_IK_Ball_Parent
+        weight: 1
+      - path: Player_Rig/Root/Spine_IK_Pole
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: Idle
+      firstFrame: -1
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Player
+        weight: 1
+      - path: Player_Rig
+        weight: 1
+      - path: Player_Rig/Root
+        weight: 1
+      - path: Player_Rig/Root/Arm_Pole_L
+        weight: 1
+      - path: Player_Rig/Root/Arm_Pole_R
+        weight: 1
+      - path: Player_Rig/Root/Chest
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent/Head
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent/Head/Eye_Brow_L
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent/Head/Eye_Brow_R
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent/Head/Eye_L
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent/Head/Eye_R
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent/Head/Jaw
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_L
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_L/UpperArm_L
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_L/UpperArm_L/LowerArm_L
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Shield_Rotator
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Shield_Rotator/Shield_Opener
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_R
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_R/UpperArm_R
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_R/UpperArm_R/LowerArm_R
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Arm_Pivot
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Cannon
+        weight: 1
+      - path: Player_Rig/Root/Chest/Spine_1
+        weight: 1
+      - path: Player_Rig/Root/Chest/Spine_1/Spine_2
+        weight: 1
+      - path: Player_Rig/Root/Chest/Spine_1/Spine_2/Spine_3
+        weight: 1
+      - path: Player_Rig/Root/Chest/Tank_L
+        weight: 1
+      - path: Player_Rig/Root/Chest/Tank_R
+        weight: 1
+      - path: Player_Rig/Root/Chest/Tie__
+        weight: 1
+      - path: Player_Rig/Root/Chest/Tie__/Tie_2
+        weight: 1
+      - path: Player_Rig/Root/Chest/Tie__/Tie_2/Tie_3
+        weight: 1
+      - path: Player_Rig/Root/Chest/Tie__/Tie_2/Tie_3/Tie_4
+        weight: 1
+      - path: Player_Rig/Root/Head_Target
+        weight: 1
+      - path: Player_Rig/Root/Head_Target/Eye_Target_L
+        weight: 1
+      - path: Player_Rig/Root/Head_Target/Eye_Target_R
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Fingers_1
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Fingers_1/Fingers_2
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Fingers_1/Fingers_2/Fingers_3
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Index_1
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Index_1/Index_2
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Index_1/Index_2/Index_3
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Thumb_1
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Thumb_1/Thumb_2
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Thumb_1/Thumb_2/Themb_3
+        weight: 1
+      - path: Player_Rig/Root/Right_Arm_Target
+        weight: 1
+      - path: Player_Rig/Root/Spine_IK_Ball_Parent
+        weight: 1
+      - path: Player_Rig/Root/Spine_IK_Pole
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Move
+      takeName: Move
+      firstFrame: 0
+      lastFrame: 23
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Player
+        weight: 1
+      - path: Player_Rig
+        weight: 1
+      - path: Player_Rig/Root
+        weight: 1
+      - path: Player_Rig/Root/Arm_Pole_L
+        weight: 1
+      - path: Player_Rig/Root/Arm_Pole_R
+        weight: 1
+      - path: Player_Rig/Root/Chest
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent/Head
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent/Head/Eye_Brow_L
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent/Head/Eye_Brow_R
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent/Head/Eye_L
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent/Head/Eye_R
+        weight: 1
+      - path: Player_Rig/Root/Chest/Neck/Head_Parent/Head/Jaw
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_L
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_L/UpperArm_L
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_L/UpperArm_L/LowerArm_L
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Shield_Rotator
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Shield_Rotator/Shield_Opener
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_R
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_R/UpperArm_R
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_R/UpperArm_R/LowerArm_R
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Arm_Pivot
+        weight: 1
+      - path: Player_Rig/Root/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Cannon
+        weight: 1
+      - path: Player_Rig/Root/Chest/Spine_1
+        weight: 1
+      - path: Player_Rig/Root/Chest/Spine_1/Spine_2
+        weight: 1
+      - path: Player_Rig/Root/Chest/Spine_1/Spine_2/Spine_3
+        weight: 1
+      - path: Player_Rig/Root/Chest/Tank_L
+        weight: 1
+      - path: Player_Rig/Root/Chest/Tank_R
+        weight: 1
+      - path: Player_Rig/Root/Chest/Tie__
+        weight: 1
+      - path: Player_Rig/Root/Chest/Tie__/Tie_2
+        weight: 1
+      - path: Player_Rig/Root/Chest/Tie__/Tie_2/Tie_3
+        weight: 1
+      - path: Player_Rig/Root/Chest/Tie__/Tie_2/Tie_3/Tie_4
+        weight: 1
+      - path: Player_Rig/Root/Head_Target
+        weight: 1
+      - path: Player_Rig/Root/Head_Target/Eye_Target_L
+        weight: 1
+      - path: Player_Rig/Root/Head_Target/Eye_Target_R
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Fingers_1
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Fingers_1/Fingers_2
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Fingers_1/Fingers_2/Fingers_3
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Index_1
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Index_1/Index_2
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Index_1/Index_2/Index_3
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Thumb_1
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Thumb_1/Thumb_2
+        weight: 1
+      - path: Player_Rig/Root/Left_Arm_Target/Thumb_1/Thumb_2/Themb_3
+        weight: 1
+      - path: Player_Rig/Root/Right_Arm_Target
+        weight: 1
+      - path: Player_Rig/Root/Spine_IK_Ball_Parent
+        weight: 1
+      - path: Player_Rig/Root/Spine_IK_Pole
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
