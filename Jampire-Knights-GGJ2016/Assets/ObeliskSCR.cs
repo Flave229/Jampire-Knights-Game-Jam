@@ -1,15 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ObeliskSCR : MonoBehaviour {
+public class ObeliskSCR : MonoBehaviour
+{
+    Health healthManager;
 
-	// Use this for initialization
-	void Start () {
-	
+	void Start()
+    {
+        healthManager = GetComponent<Health>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
+	void Update()
+    {
+	    if (healthManager.health <= 0)
+        {
+
+        }
 	}
 }
