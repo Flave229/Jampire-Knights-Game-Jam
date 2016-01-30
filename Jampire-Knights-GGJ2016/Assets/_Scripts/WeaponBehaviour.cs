@@ -17,6 +17,7 @@ public class WeaponBehaviour : MonoBehaviour {
         for (int i = 0; i < wands.Count; i++)
         {
             wands[i].transform.parent = wandOrigin;
+            wands[i].GetComponent<MeshRenderer>().enabled = (i == 0);
         }
 	}
 	
@@ -32,32 +33,25 @@ public class WeaponBehaviour : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             selectedWeapon = 1;
-
-            UpdateStaffType();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             selectedWeapon = 2;
-
-            UpdateStaffType();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             selectedWeapon = 3;
-
-            UpdateStaffType();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             selectedWeapon = 4;
-
-            UpdateStaffType();
         }
+
+        UpdateStaffType();
     }
 
     void FireProjectile()
     {
-
         Instantiate(projectile[selectedWeapon - 1], projectileSpawnPoint.position, projectileSpawnPoint.rotation);
     }
 
@@ -65,7 +59,8 @@ public class WeaponBehaviour : MonoBehaviour {
     {
         for (int i = 0; i < wands.Count; i++)
         {
-            wands[i].SetActive(i == selectedWeapon - 1);
+            wands[i].GetComponent<MeshRenderer>().enabled = (i == selectedWeapon - 1);
+            //wands[i].SetActive(i == selectedWeapon - 1);
         }
     }
 }
