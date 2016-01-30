@@ -1,19 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ProjectileMover : MonoBehaviour {
+public class ProjectileMover : MonoBehaviour
+{
+    public float speed;
 
-	// Use this for initialization
-	void Start () {
+	void Start()
+    {
 	
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		transform.Translate (0.0f, 0.0f, 1.0f);
+	void Update()
+    {
+		transform.Translate(Vector3.forward * speed * Time.deltaTime);
 	}
 
-	void OnCollisionEnter(Collision other){
+	void OnTriggerEnter(Collider other){
 		if(other.gameObject.CompareTag("Enemy")){
             other.gameObject.GetComponent<Health>().health -= 10;
 			//Destroy (other.gameObject, 0.1f);
