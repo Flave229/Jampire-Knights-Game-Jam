@@ -3,6 +3,9 @@ using System.Collections;
 
 public class MeteoriteCTRL : MonoBehaviour {
 
+    public float speed;
+    [HideInInspector]
+    public GameObject target;
 	// Use this for initialization
 	void Start () {
 	 
@@ -10,10 +13,7 @@ public class MeteoriteCTRL : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Vector3 newPos = gameObject.transform.position;
-        newPos.y -= 10.0f * Time.deltaTime;
-
-        gameObject.transform.position = newPos;
+        transform.Translate((target.transform.position - transform.position).normalized * speed * Time.deltaTime);
 	}
 
 }

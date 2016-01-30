@@ -1,29 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class MeteoriteTargetCollisions : MonoBehaviour {
 
-    bool playerInTarget;
+    List<GameObject> inTarget = new List<GameObject>();
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "Player")
-        {
-            playerInTarget = true;
-        }
+        inTarget.Add(col.gameObject);
     }
 
     void OnTriggerExit(Collider col)
     {
-        if (col.gameObject.tag == "Player")
-        {
-            playerInTarget = false;
-        }
+        inTarget.Remove(col.gameObject);
     }
 
 	// Use this for initialization
 	void Start () {
-        playerInTarget = false;
+        
 	}
 	
 	// Update is called once per frame
@@ -31,8 +26,18 @@ public class MeteoriteTargetCollisions : MonoBehaviour {
     {
 	}
 
-    public bool isPlayerInTarget()
+    public void DealDamage()
     {
-        return playerInTarget;
+        foreach (GameObject g in inTarget)
+        {
+            if (g)
+            {
+                Health h = g.GetComponent<Health>();
+                if (h)
+                {
+                    h.addHealth(-40);
+                }
+            }
+        }
     }
 }

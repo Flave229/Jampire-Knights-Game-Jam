@@ -3,18 +3,18 @@ using System.Collections;
 
 public class MeteoriteCollisions : MonoBehaviour {
 
+    [HideInInspector]
+    public GameObject target;
+
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "Target")
+        if (col.gameObject == target)
         {
-            print("Collision Happened Here Between" + gameObject.tag + " and " + col.gameObject.tag);
+            //print("Collision Happened Here Between" + gameObject.tag + " and " + col.gameObject.tag);
 
-            if ((col.GetComponent<MeteoriteTargetCollisions>().isPlayerInTarget()))
-            {
-                GameObject.FindGameObjectWithTag("Player").GetComponent<Health>().addHealth(-40);
-            }
+            target.GetComponent<MeteoriteTargetCollisions>().DealDamage();
 
-            Destroy(col.gameObject);
+            Destroy(target);
             Destroy(gameObject);
         }
     }
