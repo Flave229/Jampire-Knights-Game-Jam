@@ -1,35 +1,105 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ItemSpawner : MonoBehaviour {
 
     public Transform itemPrefab;
     public Transform itemOrigin;
-    public float radius;
+    public float minRadius;
+    public float maxRadius;
     float timer;
+    enum State
+    {
+        _WAITING,
+        WAITING_TO_SPAWN,
+        SPAWN_ITEMS,
+        COLLECTING_ITEMS,
+        PERFORMING_RITUAL
+    };
+    State currentState, nextState;
+    List<GameObject> items = new List<GameObject>();
 
-	// Use this for initialization
     void Start()
     {
         timer = 0;
+        currentState = State.WAITING_TO_SPAWN;
 	}
+
+    void ChangeStateAfter(State nextState, float seconds)
+    {
+        currentState = State._WAITING;
+        this.nextState = nextState;
+        timer = seconds;
+    }
 	
-	// Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer > 5.0f)
+        switch (currentState)
         {
-            timer -= 5.0f;
-            Vector3 pos = Random.onUnitSphere;
-            pos.y = 0;
-            //pos.Normalize();
-            pos *= radius;//on unit circle in xz plane with radius
-            Quaternion rot = Quaternion.LookRotation(-pos);//look towards the center when spawned, not important when enemy class controls rotation
-            Transform enemy = (Transform)Instantiate(itemPrefab);
-            enemy.parent = itemOrigin;
-            enemy.localPosition = pos;
-            enemy.rotation = rot;
+            case State._WAITING:
+                {
+                    timer -= Time.deltaTime;
+                    if (timer <= 0)
+                    {
+                        currentState = nextState;
+                    }
+                    break;
+                }
+            case State.WAITING_TO_SPAWN:
+                {
+                    ChangeStateAfter(State.SPAWN_ITEMS, Random.Range(5, 20));
+                    break;
+                }
+            case State.SPAWN_ITEMS:
+                {
+                    int numItemsToSpawn = Random.Range(1, 3);
+                    for (int i = 0; i < numItemsToSpawn; i++)
+                    {
+                        SpawnItem();
+                    }
+                    ChangeStateAfter(State.COLLECTING_ITEMS, 0);
+                    break;
+                }
+            case State.COLLECTING_ITEMS:
+                {
+                    foreach (GameObject item in items)
+                    {
+                        if (item == null)
+                        {
+                            items.Remove(item);
+                            break;
+                        }
+                    }
+                    if (items.Count == 0)
+                    {
+                        ChangeStateAfter(State.PERFORMING_RITUAL, 0);
+                    }
+                    break;
+                }
+            case State.PERFORMING_RITUAL:
+                {
+                    foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+                    {
+                        enemy.GetComponent<Health>().health = 0;
+                    }
+                    ChangeStateAfter(State.WAITING_TO_SPAWN, 0);
+                    break;
+                }
         }
 	}
+
+    void SpawnItem()
+    {
+        Vector3 pos = Random.onUnitSphere;
+        pos.y = 0;
+        pos.Normalize();
+        pos *= Random.Range(minRadius, maxRadius);//on unit circle in xz plane with radius
+        Quaternion rot = Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up);
+        Transform item = (Transform)Instantiate(itemPrefab);
+        item.parent = itemOrigin;
+        item.localPosition = pos;
+        item.rotation = rot;
+        items.Add(item.gameObject);
+    }
 }
