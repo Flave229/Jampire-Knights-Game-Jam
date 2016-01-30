@@ -5,7 +5,7 @@ using System.Collections;
 public class ScoreCTRL : MonoBehaviour {
 	
 	private int _scoreDisp;
-	private float _scoreReal;
+	private static float _scoreReal;
 
 	public Text _scoreText;
 
@@ -22,4 +22,9 @@ public class ScoreCTRL : MonoBehaviour {
 		_scoreDisp = (int) (_scoreReal + 0.5f);// always rounds up ame as maths.ceal()
 		_scoreText.text = "Score: " + (_scoreDisp.ToString().PadLeft(5, '0'));
 	}
+
+    public static void addScore(int s)
+    {
+        _scoreReal += s;
+    }
 }
