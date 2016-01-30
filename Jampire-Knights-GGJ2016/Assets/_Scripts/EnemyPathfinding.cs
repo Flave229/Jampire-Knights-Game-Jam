@@ -15,11 +15,20 @@ public class EnemyPathfinding : MonoBehaviour
     void Update()
     {
         GameObject nearestTower = FindClosestTower();
+
         if (nearestTower == null)
         {
             nearestTower = FindObelisk();
         }
-        enemyScript.setTarget(nearestTower.transform);
+
+        if (nearestTower != null)
+        {
+            enemyScript.setTarget(nearestTower.transform);
+        }
+        else
+        {
+            enemyScript.setTarget(gameObject.transform);
+        }
 	}
 
     GameObject FindClosestTower()
