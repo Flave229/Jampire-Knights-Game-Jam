@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Health))]
 public class PlayerCTRL : MonoBehaviour
 {
 	public float speed = 6f;            // The speed that the player will move at.
@@ -12,6 +14,7 @@ public class PlayerCTRL : MonoBehaviour
 	Rigidbody playerRigidbody;          // Reference to the player's rigidbody.
 	int floorMask;                      // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
 	float camRayLength = 100f;          // The length of the ray from the camera into the scene.
+    Health health;
 	
 	void Awake ()
 	{
@@ -21,6 +24,7 @@ public class PlayerCTRL : MonoBehaviour
 		// Set up references.
 		anim = GetComponent <Animator> ();
 		playerRigidbody = GetComponent <Rigidbody> ();
+        health = GetComponent<Health>();
 	}
 	
 	
@@ -43,6 +47,14 @@ public class PlayerCTRL : MonoBehaviour
 		if (fire)
 			FireProjectile ();
 	}
+
+    void Update()
+    {
+        if (health.health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 	
 	void Move (float h, float v)
 	{
