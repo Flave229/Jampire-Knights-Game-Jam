@@ -1,33 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyPathfinding : MonoBehaviour {
-
+[RequireComponent(typeof(Enemy))]
+public class EnemyPathfinding : MonoBehaviour
+{
+    Enemy enemyScript;
     public float enemyRange;
 
-	// Use this for initialization
-	void Start () {
-	
+	void Start()
+    {
+        enemyScript = GetComponent<Enemy>();
 	}
 	
-	// Update is called once per frame
     void Update()
     {
         GameObject nearestTower = FindClosestTower();
-        Vector3 targetPos = new Vector3(0.0f, 0.0f, 0.0f);
-
-        if (nearestTower != null)
-        {
-            // A tower has been detected, and therefore enemy prioritises attack
-            targetPos = new Vector3(nearestTower.transform.position.x, 0.0f, nearestTower.transform.position.z);
-        }
-        else
+        if (nearestTower == null)
         {
             nearestTower = FindObelisk();
-            targetPos = new Vector3(nearestTower.transform.position.x, 0.0f, nearestTower.transform.position.z);
         }
-
-        gameObject.GetComponent<Enemy>().setTargetPos(targetPos);
+        enemyScript.setTarget(nearestTower.transform);
 	}
 
     GameObject FindClosestTower()
