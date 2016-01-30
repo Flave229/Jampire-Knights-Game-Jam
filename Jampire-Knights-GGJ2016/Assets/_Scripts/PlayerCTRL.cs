@@ -4,6 +4,8 @@ using System.Collections;
 public class PlayerCTRL : MonoBehaviour
 {
 	public float speed = 6f;            // The speed that the player will move at.
+	public Rigidbody projectile;
+	public Transform projectileSpawnPoint;
 	
 	Vector3 movement;                   // The vector to store the direction of the player's movement.
 	Animator anim;                      // Reference to the animator component.
@@ -27,6 +29,7 @@ public class PlayerCTRL : MonoBehaviour
 		// Store the input axes.
 		float h = Input.GetAxisRaw ("Horizontal");
 		float v = Input.GetAxisRaw ("Vertical");
+		bool fire = Input.GetMouseButtonDown (0);// 0 = left click, 1 = right click, 2 = middle click
 		
 		// Move the player around the scene.
 		Move (h, v);
@@ -36,6 +39,9 @@ public class PlayerCTRL : MonoBehaviour
 		
 		// Animate the player.
 		Animating (h, v);
+
+		if (fire)
+			FireProjectile ();
 	}
 	
 	void Move (float h, float v)
@@ -82,6 +88,11 @@ public class PlayerCTRL : MonoBehaviour
 		
 		// Tell the animator whether or not the player is walking.
 		anim.SetBool ("IsWalking", walking);
+	}
+
+	void FireProjectile(){
+		Rigidbody projectileInstance;
+		projectileInstance = Instantiate (projectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation) as Rigidbody;
 	}
 
 	/*
