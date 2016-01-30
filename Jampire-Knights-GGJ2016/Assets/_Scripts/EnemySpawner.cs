@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemySpawner : MonoBehaviour
 {
     public Transform enemyPrefab;
+    public Transform enemyOrigin;
     public float radius;
     float timer;
 
@@ -22,9 +23,11 @@ public class EnemySpawner : MonoBehaviour
             pos.y = 0;
             pos.Normalize();
             pos *= radius;//on unit circle in xz plane with radius
-            pos.y += 0.5f;//height of enemy (or we could put the enemies origin at its feet idk)
             Quaternion rot = Quaternion.LookRotation(-pos);//look towards the center when spawned, not important when enemy class controls rotation
-            Instantiate(enemyPrefab, pos, rot);
+            Transform enemy = (Transform)Instantiate(enemyPrefab);
+            enemy.parent = enemyOrigin;
+            enemy.localPosition = pos;
+            enemy.rotation = rot;
         }
 	}
 }
