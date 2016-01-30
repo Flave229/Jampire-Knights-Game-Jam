@@ -24,5 +24,9 @@ public class HealthBar : MonoBehaviour {
         {
             gameObject.transform.localScale = new Vector3(defaultScale.x * (healthManager.health / healthManager.maxHealth), defaultScale.y, defaultScale.z);
         }
+        else
+        {
+            gameObject.transform.localScale = new Vector3(0.0f, defaultScale.y, defaultScale.z);
+        }
     }
 }
