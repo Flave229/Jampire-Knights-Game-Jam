@@ -14,4 +14,23 @@ public class Health : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	}
+
+    public void addHealth(float h)
+    {
+        if (health + h > 0)
+        {
+            if (health + h < maxHealth)
+            {
+                health += h;
+            }
+            else
+            {
+                health = maxHealth;
+            }
+        }
+        else
+        {
+            health = 0;
+        }
+    }
 }
