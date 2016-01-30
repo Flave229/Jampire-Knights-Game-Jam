@@ -3,7 +3,6 @@ using System.Collections;
 
 public class TowerShoot : MonoBehaviour {
 
-    Vector3 towerPos;
     public float towerRange;
 
     // Measured in Miliseconds
@@ -17,7 +16,6 @@ public class TowerShoot : MonoBehaviour {
 	// Use this for initialization
     void Start()
     {
-        towerPos = gameObject.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -64,7 +62,7 @@ public class TowerShoot : MonoBehaviour {
         // Find nearest Enemy
         foreach (GameObject enemy in enemyList)
         {
-            Vector3 distance = enemy.transform.position - towerPos;
+            Vector3 distance = enemy.transform.position - gameObject.transform.position;
             float currDistance = distance.sqrMagnitude;
 
             // Checks if distance is within the range of tower

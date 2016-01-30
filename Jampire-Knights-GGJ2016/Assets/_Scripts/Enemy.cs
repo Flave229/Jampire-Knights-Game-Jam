@@ -33,4 +33,9 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void setTargetPos(Vector3 newPos)
+    {
+        targetPos = newPos;
+    }
 }
