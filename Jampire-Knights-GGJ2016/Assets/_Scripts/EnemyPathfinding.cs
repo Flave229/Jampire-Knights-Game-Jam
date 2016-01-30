@@ -43,7 +43,7 @@ public class EnemyPathfinding : MonoBehaviour {
         foreach (GameObject tower in towerList)
         {
             Vector3 distance = tower.transform.position - gameObject.transform.position;
-            float currDistance = distance.sqrMagnitude;
+            float currDistance = distance.magnitude;
 
             // Checks if distance is within the range of tower
             if (currDistance < lookDistance)

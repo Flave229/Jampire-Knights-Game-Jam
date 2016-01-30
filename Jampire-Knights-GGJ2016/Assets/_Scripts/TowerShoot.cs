@@ -63,7 +63,7 @@ public class TowerShoot : MonoBehaviour {
         foreach (GameObject enemy in enemyList)
         {
             Vector3 distance = enemy.transform.position - gameObject.transform.position;
-            float currDistance = distance.sqrMagnitude;
+            float currDistance = distance.magnitude;
 
             // Checks if distance is within the range of tower
             if (currDistance < lookDistance)

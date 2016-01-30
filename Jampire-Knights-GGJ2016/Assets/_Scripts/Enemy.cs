@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
     Rigidbody rigidBody;
     Health health;
 
+    public float attackRange;
+
 	void Start()
     {
         targetPos = new Vector3(0, 0, 0);
@@ -38,4 +40,6 @@ public class Enemy : MonoBehaviour
     {
         targetPos = newPos;
     }
+
+
 }
