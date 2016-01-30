@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class ItemSpawner : MonoBehaviour {
 
-    public Transform itemPrefab;
+    public Transform[] itemPrefabs;
     public Transform itemOrigin;
     public float minRadius;
     public float maxRadius;
@@ -79,10 +79,7 @@ public class ItemSpawner : MonoBehaviour {
                 }
             case State.PERFORMING_RITUAL:
                 {
-                    foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
-                    {
-                        enemy.GetComponent<Health>().health = 0;
-                    }
+                    GameObject.FindGameObjectWithTag("Obelisk").GetComponent<RitualManager>().PerformRitual(null);
                     ChangeStateAfter(State.WAITING_TO_SPAWN, 0);
                     break;
                 }
@@ -96,7 +93,7 @@ public class ItemSpawner : MonoBehaviour {
         pos.Normalize();
         pos *= Random.Range(minRadius, maxRadius);//on unit circle in xz plane with radius
         Quaternion rot = Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up);
-        Transform item = (Transform)Instantiate(itemPrefab);
+        Transform item = (Transform)Instantiate(itemPrefabs[Random.Range(0, itemPrefabs.Length)]);
         item.parent = itemOrigin;
         item.localPosition = pos;
         item.rotation = rot;
