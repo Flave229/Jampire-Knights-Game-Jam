@@ -6,7 +6,7 @@ using System.Collections;
 public class PlayerCTRL : MonoBehaviour
 {
 	public float speed = 6f;            // The speed that the player will move at.
-	public Rigidbody projectile;
+	public GameObject projectile;
 	public Transform projectileSpawnPoint;
 	
 	Vector3 movement;                   // The vector to store the direction of the player's movement.
@@ -103,8 +103,7 @@ public class PlayerCTRL : MonoBehaviour
 	}
 
 	void FireProjectile(){
-		Rigidbody projectileInstance;
-		projectileInstance = Instantiate (projectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation) as Rigidbody;
+		Instantiate (projectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
 	}
 
 	/*
