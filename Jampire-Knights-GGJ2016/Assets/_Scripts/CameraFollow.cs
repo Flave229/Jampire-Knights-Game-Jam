@@ -16,6 +16,11 @@ public class CameraFollow : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate ()
 	{
+        if (!target)
+        {
+            Destroy(this);//remove this component from the camera
+            return;
+        }
 		Vector3 targetCamPos = target.position + offset;
 		transform.position = Vector3.Lerp (transform.position, targetCamPos, smoothing * Time.deltaTime);
 	}
