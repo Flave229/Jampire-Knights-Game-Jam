@@ -5,6 +5,7 @@ using System.Collections;
 public class Tower : MonoBehaviour
 {
     Health healthManager;
+    public int cost;
 
 	void Start()
     {
@@ -18,4 +19,9 @@ public class Tower : MonoBehaviour
             Destroy(gameObject);
         }
 	}
+
+    public int getCost()
+    {
+        return cost;
+    }
 }

@@ -4,7 +4,7 @@ using System.Collections;
 
 public class ScoreCTRL : MonoBehaviour {
 	
-	private int _scoreDisp;
+	private static int _scoreDisp;
 	private static float _scoreReal;
 
 	public Text _scoreText;
@@ -26,5 +26,10 @@ public class ScoreCTRL : MonoBehaviour {
     public static void addScore(int s)
     {
         _scoreReal += s;
+    }
+
+    public static int getScore()
+    {
+        return _scoreDisp;
     }
 }
