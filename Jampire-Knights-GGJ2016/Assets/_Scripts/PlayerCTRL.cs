@@ -47,6 +47,8 @@ public class PlayerCTRL : MonoBehaviour
         if (health.health <= 0)
         {
             //Destroy(gameObject);
+            God.score = ScoreCTRL.getScore();
+            God.message = "The Angels claimed your corpse";
             Application.LoadLevel(2);
         }
     }
