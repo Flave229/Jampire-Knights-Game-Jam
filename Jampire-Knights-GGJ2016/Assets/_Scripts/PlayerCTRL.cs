@@ -20,7 +20,7 @@ public class PlayerCTRL : MonoBehaviour
 		floorMask = LayerMask.GetMask ("Floor");
 		
 		// Set up references.
-		anim = GetComponent <Animator> ();
+		anim = GetComponentInChildren <Animator> ();
 		playerRigidbody = GetComponent <Rigidbody> ();
         health = GetComponent<Health>();
 	}
@@ -95,6 +95,11 @@ public class PlayerCTRL : MonoBehaviour
 		
 		// Tell the animator whether or not the player is walking.
 		anim.SetBool ("IsWalking", walking);
+
+        if (Input.GetMouseButtonDown(0)) 
+        {
+            anim.SetTrigger("Fire");
+        }
 	}
 
 	/*

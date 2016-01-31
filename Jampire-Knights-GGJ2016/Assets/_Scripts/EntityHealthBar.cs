@@ -18,6 +18,7 @@ public class EntityHealthBar : MonoBehaviour
 	void Update()
     {
         float healthPercent = healthComponent.health / healthComponent.maxHealth;
+        healthPercent = Mathf.Clamp(healthPercent, 0, 1);
         transform.localScale = new Vector3(startScale.x * healthPercent, startScale.y, startScale.z);
         //color
         Color color;
