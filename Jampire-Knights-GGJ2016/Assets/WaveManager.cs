@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public class WaveManager : MonoBehaviour {
-	private Wave[] _waveArr = new Wave[2];
+public class WaveManager : MonoBehaviour
+{
+    private List<Wave> waves = new List<Wave>();
 	private int _waveIndex = 0;
 
 	public float waveDelay;
@@ -13,37 +15,34 @@ public class WaveManager : MonoBehaviour {
 	// Use this for initialization
 	void Awake ()
 	{
-		for(int i = 0; i < _waveArr.Length; i++)
-		{
-			_waveArr [i] = new Wave (enemySpawner, meteoriteSpawner, attackPatternDelay);
-		}
-		_waveArr [0].AddAttackPattern (3, 0, 5);
-		_waveArr [0].AddAttackPattern (4, 0, 5);
-		_waveArr [0].AddAttackPattern (8, 0, 5);
-
-		_waveArr [1].AddAttackPattern (0, 3, 9);
-		_waveArr [1].AddAttackPattern (4, 0, 3);
-		_waveArr [1].AddAttackPattern (7, 20, 40);
-
-		Debug.Log ("Wave Manager Awake");
+        waves.Add(new Wave(enemySpawner, meteoriteSpawner, attackPatternDelay)
+            .AddAttackPattern(3, 0, 5)
+            .AddAttackPattern(4, 0, 5)
+            .AddAttackPattern(8, 0, 5)
+            );
+        waves.Add(new Wave(enemySpawner, meteoriteSpawner, attackPatternDelay)
+            .AddAttackPattern(0, 3, 9)
+            .AddAttackPattern(4, 0, 3)
+            .AddAttackPattern(7, 20, 10)
+            );
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void Update()
 	{
-		if (_waveArr [_waveIndex].GetWaveComplete ())
+        if (waves[_waveIndex].GetWaveComplete())
 		{
-			_waveArr [_waveIndex]._waveActive = false;
-			_waveIndex = (_waveIndex + 1) % _waveArr.Length;
-			Debug.Log ("Wave Complete");
+            waves[_waveIndex]._waveActive = false;
+            Debug.Log("Wave " + _waveIndex.ToString() + " Complete");
+            _waveIndex = (_waveIndex + 1) % waves.Count;
 		}
 
-		if(_waveArr[_waveIndex]._waveActive != true)
+        if (waves[_waveIndex]._waveActive != true)
 		{
-			_waveArr [_waveIndex]._waveActive = true;
-			Debug.Log ("Wave Active");
+            waves[_waveIndex]._waveActive = true;
+			Debug.Log ("Wave " + _waveIndex.ToString() + " Active");
 		}
 
-		_waveArr [_waveIndex].update ();
+        waves[_waveIndex].update();
 	}
 }
