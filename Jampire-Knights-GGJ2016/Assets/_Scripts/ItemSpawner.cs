@@ -8,6 +8,7 @@ public class ItemSpawner : MonoBehaviour {
     public Transform itemOrigin;
     public float minRadius;
     public float maxRadius;
+    public ToolTipMessage message;
     float timer;
     enum State
     {
@@ -53,11 +54,12 @@ public class ItemSpawner : MonoBehaviour {
                 }
             case State.SPAWN_ITEMS:
                 {
-                    int numItemsToSpawn = Random.Range(1, 3);
+                    int numItemsToSpawn = Random.Range(2, 5);
                     for (int i = 0; i < numItemsToSpawn; i++)
                     {
                         SpawnItem();
                     }
+                    message.setUIMessage("There are " + items.Count + " ritual items, go get them!", 7);
                     ChangeStateAfter(State.COLLECTING_ITEMS, 0);
                     break;
                 }

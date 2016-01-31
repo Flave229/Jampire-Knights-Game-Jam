@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class RitualManager : MonoBehaviour
 {
+    public ToolTipMessage message;
     enum State
     {
         NOTHING,
@@ -34,7 +35,7 @@ public class RitualManager : MonoBehaviour
                     transform.Rotate(Vector3.up, 45 * Time.deltaTime);
                     if (transform.rotation.eulerAngles.y >= 90)
                     {
-                        transform.rotation.SetAxisAngle(Vector3.up, 0);
+                        transform.rotation = Quaternion.AngleAxis(0, Vector3.up);
                         state = State.BUFFING;
                     }
                     break;
@@ -81,6 +82,7 @@ public class RitualManager : MonoBehaviour
     public void PerformRitual(List<GameObject> items)
     {
         buff = new Buff[] { Buff.HEALTH_REGEN, Buff.HEALTH_REGEN, Buff.HEALTH_REGEN, Buff.REPAIR_TOWERS }[Random.Range(0, 4)];
+        message.setUIMessage("Ritual complete. " + (buff == Buff.HEALTH_REGEN ? "Regenerating health." : "Repairing towers."), 7);
         state = State.PERFORMING_RITUAL;
         timer = 5;
     }
