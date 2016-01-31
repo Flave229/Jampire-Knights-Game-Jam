@@ -78,7 +78,7 @@ public class Enemy : MonoBehaviour
         {
             if (alive)
             {
-                col.gameObject.GetComponent<Health>().addHealth(-10);
+                col.gameObject.GetComponent<Health>().addHealth(-2);
             }
         }
     }
