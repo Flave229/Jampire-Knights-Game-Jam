@@ -19,6 +19,14 @@ public class WaveManager : MonoBehaviour
             .AddAttackPattern(3, 0, 5)
             .AddAttackPattern(4, 0, 5)
             .AddAttackPattern(8, 0, 5)
+
+            .AddAttackPattern(0, 3, 10)
+            .AddAttackPattern(0, 10, 10)
+            .AddAttackPattern(0, 300, 100)
+
+            .AddAttackPattern(20, 20, 20)
+            .AddAttackPattern(100, 100, 20)
+            .AddAttackPattern(2, 2, 1)
             );
         waves.Add(new Wave(enemySpawner, meteoriteSpawner, attackPatternDelay)
             .AddAttackPattern(1, 1, 0.1f)

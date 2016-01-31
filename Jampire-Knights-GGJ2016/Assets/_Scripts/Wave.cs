@@ -32,22 +32,23 @@ public class Wave {
 	public void update(){
 		if (_attackIndex != waveParts.Count)
 		{
-			//if (_attackDelay < _attackPatternDelay)
+			if (_attackDelay < _attackPatternDelay)
 				_attackDelay += Time.deltaTime;
+            else
+            {
+                if (_sequenceRunning == false)
+                {
+                    Attack();
+                    _sequenceRunning = true;
+                }
+                if (_enemySpawner.GetProgress() && _meteoriteSpawner.GetProgress())
+                {
+                    _sequenceRunning = false;
+                    AttackPhaseComplete();// increments the _attackIndex
+                    _attackDelay = 0.0f;
+                }
+            }
 
-			if (_attackDelay <= waveParts[_attackIndex]._time && _sequenceRunning == false)
-			{
-				Attack ();
-				_sequenceRunning = true;
-			}
-
-			if (_attackDelay >= waveParts[_attackIndex]._time) {
-				if (_enemySpawner.GetProgress () && _meteoriteSpawner.GetProgress ()) {
-					_sequenceRunning = false;
-					AttackPhaseComplete ();// increments the _attackIndex
-					_attackDelay = 0.0f;
-				}
-			}
 		}
 		else
 		{

@@ -45,6 +45,7 @@ public class EnemySpawner : MonoBehaviour
 		}
 		else
 		{
+            _timer = 0;
 			_attackComplete = true;
 		}
 
@@ -54,7 +55,7 @@ public class EnemySpawner : MonoBehaviour
 	{
 		_attackComplete = false;
 		_numbertoSpawn = numberOfenemies;
-		_timeTillNext = (float)numberOfenemies / time;
+        _timeTillNext = time / (float)numberOfenemies;
 	}
 
 	public bool GetProgress()

@@ -12,12 +12,10 @@ public class MeteoriteSpawner : MonoBehaviour
     public Transform meteorPrefab;
     public Transform meteorTarget;
 
-    float timer;
-
 	// Use this for initialization
 	void Start () {
 		_attackComplete = false;
-        timer = 0;
+        _timer = 0;
 	}
 	
 	// Update is called once per frame
@@ -25,18 +23,19 @@ public class MeteoriteSpawner : MonoBehaviour
 
 		if (_numbertoSpawn > 0)
 		{
-			timer += Time.deltaTime;
+			_timer += Time.deltaTime;
 
-			while (timer >= _timeTillNext)
+			while (_timer >= _timeTillNext)
 			{
 				_numbertoSpawn -= 1;
 				InstantiateMeteor();
-				timer -= _timeTillNext;
+				_timer -= _timeTillNext;
 			}
 		}
 		else
 		{
 			_attackComplete = true;
+            _timer = 0;
 		}
 	}
 
@@ -84,7 +83,7 @@ public class MeteoriteSpawner : MonoBehaviour
 	{
 		_attackComplete = false;
 		_numbertoSpawn = numberOfenemies;
-		_timeTillNext = numberOfenemies / time;
+        _timeTillNext = time / (float)numberOfenemies;
 	}
 
 	public bool GetProgress()
