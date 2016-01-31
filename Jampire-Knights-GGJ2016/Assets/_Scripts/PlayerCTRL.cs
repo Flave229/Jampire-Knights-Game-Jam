@@ -46,7 +46,8 @@ public class PlayerCTRL : MonoBehaviour
     {
         if (health.health <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            Application.LoadLevel(2);
         }
     }
 	
