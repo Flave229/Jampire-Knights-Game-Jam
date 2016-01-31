@@ -17,7 +17,7 @@ public class WeaponBehaviour : MonoBehaviour {
         for (int i = 0; i < wands.Count; i++)
         {
             wands[i].transform.parent = wandOrigin;
-            wands[i].GetComponent<MeshRenderer>().enabled = (i == 0);
+            wands[i].GetComponentInChildren<MeshRenderer>().enabled = (i == 0);
         }
 	}
 	
@@ -59,7 +59,7 @@ public class WeaponBehaviour : MonoBehaviour {
     {
         for (int i = 0; i < wands.Count; i++)
         {
-            wands[i].GetComponent<MeshRenderer>().enabled = (i == selectedWeapon - 1);
+            wands[i].GetComponentInChildren<MeshRenderer>().enabled = (i == selectedWeapon - 1);
             //wands[i].SetActive(i == selectedWeapon - 1);
         }
     }
