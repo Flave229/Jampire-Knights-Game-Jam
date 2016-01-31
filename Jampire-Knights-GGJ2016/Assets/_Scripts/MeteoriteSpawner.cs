@@ -12,13 +12,12 @@ public class MeteoriteSpawner : MonoBehaviour
     public Transform meteorPrefab;
     public Transform meteorTarget;
 
-    public float defaultTimer;
     float timer;
 
 	// Use this for initialization
 	void Start () {
 		_attackComplete = false;
-        timer = defaultTimer;
+        timer = 0;
 	}
 	
 	// Update is called once per frame
@@ -26,13 +25,13 @@ public class MeteoriteSpawner : MonoBehaviour
 
 		if (_numbertoSpawn > 0)
 		{
-			timer -= Time.deltaTime;
+			timer += Time.deltaTime;
 
-			if (timer <= 0)
+			while (timer >= _timeTillNext)
 			{
 				_numbertoSpawn -= 1;
 				InstantiateMeteor();
-				timer = defaultTimer;
+				timer -= _timeTillNext;
 			}
 		}
 		else
@@ -73,7 +72,6 @@ public class MeteoriteSpawner : MonoBehaviour
             target.Normalize();
             target *= 25;
         }
-
         Transform mTarget = (Transform)Instantiate(meteorTarget);
         mTarget.position = new Vector3(target.x, 0.05f, target.z);
         Transform meteor = (Transform)Instantiate(meteorPrefab);

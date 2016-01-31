@@ -27,10 +27,10 @@ public class EnemySpawner : MonoBehaviour
 		{
 			_timer += Time.deltaTime;
 
-			if (_timer > _timeTillNext)
+			while (_timer >= _timeTillNext)
 			{
 				_numbertoSpawn -= 1;
-				_timer = 0;
+				_timer -= _timeTillNext;
 
 				Vector3 pos = Random.onUnitSphere;
 				pos.y = 0;

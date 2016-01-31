@@ -32,7 +32,7 @@ public class Wave {
 	public void update(){
 		if (_attackIndex != waveParts.Count)
 		{
-			if (_attackDelay < _attackPatternDelay)
+			//if (_attackDelay < _attackPatternDelay)
 				_attackDelay += Time.deltaTime;
 
 			if (_attackDelay <= waveParts[_attackIndex]._time && _sequenceRunning == false)
