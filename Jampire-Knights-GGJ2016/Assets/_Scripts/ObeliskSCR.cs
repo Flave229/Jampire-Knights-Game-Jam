@@ -14,7 +14,8 @@ public class ObeliskSCR : MonoBehaviour
     {
 	    if (healthManager.health <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            Application.LoadLevel(2);
         }
 	}
 }

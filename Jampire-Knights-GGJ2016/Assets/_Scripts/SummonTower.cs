@@ -80,6 +80,7 @@ public class SummonTower : MonoBehaviour {
                             //correctTower.transform.position = gameObject.transform.position;
 
                             //correctTower = Instantiate(towerPrefab[i], towerSpawnPoint.position, towerSpawnPoint.rotation) as Transform;
+                            break;
                         }
                     }
                 }
