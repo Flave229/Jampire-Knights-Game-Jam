@@ -85,8 +85,16 @@ public class WaveManager : MonoBehaviour
             waves[_waveIndex]._waveActive = false;
             toolTip.setUIMessage("Wave " + (_waveIndex + 1).ToString() + " Complete!", 3.0f);
             Debug.Log("Wave " + (_waveIndex + 1).ToString() + " Complete");
-            _waveIndex = (_waveIndex + 1) % waves.Count;
+            _waveIndex++;
 		}
+
+        if (_waveIndex == waves.Count)
+        {
+            waves.Add(new Wave(enemySpawner, meteoriteSpawner, attackPatternDelay)
+                .AddAttackPattern(2500 + _waveIndex * _waveIndex, 200 + _waveIndex * 10, 350)
+                .AddAttackPattern(0, 10, 10)
+            );
+        }
 
         if (waves[_waveIndex]._waveActive != true)
 		{
